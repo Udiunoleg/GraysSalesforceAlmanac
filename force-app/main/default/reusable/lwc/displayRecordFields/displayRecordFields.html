@@ -1,0 +1,9 @@
+<template>
+	<div class="card">
+		<lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+			<template for:each={selectedFields} for:item="field">
+				<lightning-output-field key={field} field-name={field}></lightning-output-field>
+			</template>
+		</lightning-record-view-form>
+	</div>
+</template>

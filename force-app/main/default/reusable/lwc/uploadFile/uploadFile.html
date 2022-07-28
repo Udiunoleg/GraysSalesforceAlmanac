@@ -1,0 +1,37 @@
+<template>
+	<div class="slds-p-horizontal_small slds-size_12-of-12">
+		<!-- HEADER -->
+		<div class="slds-card__header slds-grid">
+			<header class="slds-media slds-media_center slds-has-flexi-truncate">
+				<div class="slds-media__figure">
+					<lightning-icon icon-name="utility:attach" size="x-small">
+					</lightning-icon>
+				</div>
+				<div class="slds-media__body">
+					<h2 class="slds-card__header-title" aria-level="2"><span
+							class="slds-text-heading_small slds-truncate">Upload Email Attachment</span></h2>
+				</div>
+			</header>
+		</div>
+		<!-- BODY -->
+		<div id="uploadAttachmentContainer" style="display: flex;justify-content: space-between;">
+			<div id="uploadAttachmentController" class="upload-container">
+				<lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={recordId}
+					onuploadfinished={handleUploadFinished} multiple>
+				</lightning-file-upload>
+				<br />
+			</div>
+			<div id="attachmentContainer" class="img-container">
+				<ul>
+					<template if:true={loaded}>
+						<template for:each={files} for:item="file">
+							<c-file-thumbnail-card key={file.Id} file={file} record-id={recordId}
+								thumbnail={file.thumbnailFileCard} onfileremoved={removeAttachment}>
+							</c-file-thumbnail-card>
+						</template>
+					</template>
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>

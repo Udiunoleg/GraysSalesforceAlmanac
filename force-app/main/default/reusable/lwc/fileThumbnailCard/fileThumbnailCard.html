@@ -1,0 +1,20 @@
+<template>
+	<template if:true={file}>
+		<li class="
+        slds-col
+        slds-var-p-vertical_x-small
+        slds-small-size_1-of-2
+        slds-medium-size_1-of-4
+        slds-large-size_1-of-6
+      ">
+			<div>
+				<lightning-icon icon-name={iconName} alternative-text={file.Title} title={file.Title} size="large">
+				</lightning-icon>
+				<span>{file.Title}.{file.Extension}</span>
+				<lightning-button-icon icon-name="action:remove" variant="container" alternative-text="remove"
+					onclick={handleRemove} class="slds-m-left_xx-small" title="Remove" aria-label="Remove">
+				</lightning-button-icon>
+			</div>
+		</li>
+	</template>
+</template>

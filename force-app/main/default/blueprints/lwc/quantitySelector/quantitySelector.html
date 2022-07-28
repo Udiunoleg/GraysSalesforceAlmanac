@@ -1,0 +1,22 @@
+<template>
+	<div style="display: flex;">
+		<span style="align-self: center;">
+
+			<div class="lgc-bg">
+				QTY.
+				<lightning-helptext class="slds-p-around_x-small" content={helpTextQuantity}>
+				</lightning-helptext>
+			</div>
+
+		</span>
+		<div class="quantity-selector">
+			<lightning-button-icon name="sub" icon-name="utility:dash" variant="container" alternative-text="Settings"
+				onclick={handleIncrementQuantity} title="Settings">
+			</lightning-button-icon>
+			<input class="quantity-input" type="number" value={quantity} step={increment} min="0" readonly />
+			<lightning-button-icon name="add" icon-name="utility:add" variant="container" alternative-text="Settings"
+				onclick={handleIncrementQuantity} title="Settings">
+			</lightning-button-icon>
+		</div>
+	</div>
+</template>
